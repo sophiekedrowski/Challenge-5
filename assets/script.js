@@ -36,42 +36,52 @@ var boxIds = [
     "row-5",
     "row-6",
     "row-7",
-    "row-8"
+    "row-8",
+    "row-9"
 ]
-var times = [
-    "8 A.M",
-    "9 A.M",
-    "10 A.M",
-    "11 A.M",
-    "12 P.M",
-    "1 P.M",
-    "2 P.M",
-    "3 P.M",
-    "4 P.M"]
+var times = [8, 9, 10, 11, 12, 1, 2, 3, 4]
+
+// var ActualTimes = (8 + " A.M")
+// console.log(ActualTimes)
+
+
 
 for (let i = 0; i < boxIds.length; i++) {
     var boxId = boxIds[i];
-    document.getElementById(boxId).innerHTML = 
-    
+    document.getElementById(boxId).innerHTML = times[i]
+
+    var ActualTime = (moment().hour())
+
+    if (times[i] === ActualTime) {
+        document.getElementById(boxId).className = "present"
+    }
+    else if (times[i] > ActualTime) {
+        document.getElementById(boxId).className = "past"
+    }
+    else {
+        document.getElementById(boxId).className = "future"
+    }
+
+
+
+
 }
-var boxId
-
-
-var boxes = getElementById.
+// var boxId
+var boxes = getElementById.boxIds
 
 
 var currentTime = moment().hour()
 var boxTime
 
-if (boxTime === moment().hour()) {
+// if (boxTime === moment().hour()) {
+// document.getElementById(boxId).className = "past"
+// }
+// else if (boxTime > moment().hour()) {
 
-}
-else if (boxTime > moment().hour()) {
+// }
+// else {
 
-}
-else {
-
-}
+// }
 
 
 
