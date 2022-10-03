@@ -5,9 +5,11 @@ body {
   }
   
   textarea{
+    background-color: transparent;
     background: transparent;
     border: none;
     resize: none;
+    outline: none;
     color: #000000;
     border-left: 1px solid black;
     padding: 10px;

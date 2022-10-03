@@ -39,39 +39,127 @@ var boxIds = [
     "row-8",
     "row-9"
 ]
-var times = [8, 9, 10, 11, 12, 1, 2, 3, 4]
+var times = [8, 9, 10, 11, 12, 13, 14, 15, 16]
 
-// var ActualTimes = (8 + " A.M")
-// console.log(ActualTimes)
+var TimeEvents = [
+    "EightAm",
+    "NineAm",
+    "TenAm",
+    "ElevenAm",
+    "TwelvePm",
+    "OnePm",
+    "TwoPm",
+    "ThreePm",
+    "FourPm"
+]
+
 
 
 
 for (let i = 0; i < boxIds.length; i++) {
     var boxId = boxIds[i];
-    document.getElementById(boxId).innerHTML = times[i]
 
     var ActualTime = (moment().hour())
-
+    console.log(ActualTime, times[i], boxId, TimeEvents[i])
     if (times[i] === ActualTime) {
-        document.getElementById(boxId).className = "present"
+        document.getElementById(TimeEvents[i]).className = "present"
+    }
+    else if (times[i] < ActualTime) {
+        document.getElementById(TimeEvents[i]).className = "past"
     }
     else if (times[i] > ActualTime) {
-        document.getElementById(boxId).className = "past"
+        document.getElementById(TimeEvents[i]).className = "future"
     }
-    else {
-        document.getElementById(boxId).className = "future"
-    }
-
-
-
 
 }
+
+document.getElementById("8am").addEventListener("click", function (event) {
+    console.log(document.getElementById("EightAm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("EightAm").value;
+    localStorage.setItem("EightAm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+document.getElementById("9am").addEventListener("click", function (event) {
+    console.log(document.getElementById("NineAm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("NineAm").value;
+    localStorage.setItem("NineAm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+document.getElementById("10am").addEventListener("click", function (event) {
+    console.log(document.getElementById("TenAm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("TenAm").value;
+    localStorage.setItem("TenAm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+document.getElementById("11am").addEventListener("click", function (event) {
+    console.log(document.getElementById("ElevenAm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("ElevenAm").value;
+    localStorage.setItem("ElevenAm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+document.getElementById("12pm").addEventListener("click", function (event) {
+    console.log(document.getElementById("TwelvePm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("TwelvePm").value;
+    localStorage.setItem("TwelvePm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+document.getElementById("1pm").addEventListener("click", function (event) {
+    console.log(document.getElementById("OnePm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("OnePm").value;
+    localStorage.setItem("OnePm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+document.getElementById("2pm").addEventListener("click", function (event) {
+    console.log(document.getElementById("TwoPm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("TwoPm").value;
+    localStorage.setItem("TwoPm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+document.getElementById("3pm").addEventListener("click", function (event) {
+    console.log(document.getElementById("ThreePm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("ThreePm").value;
+    localStorage.setItem("ThreePm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+document.getElementById("4pm").addEventListener("click", function (event) {
+    console.log(document.getElementById("FourPm").value)
+    event.preventDefault();
+    var timeSave = document.getElementById("FourPm").value;
+    localStorage.setItem("FourPm", JSON.stringify(timeSave));
+    alert("Appointment saved to local storage");
+});
+
+function GettingStorage() {
+    for (let i = 0; i < TimeEvents.length; i++) {
+        var TextId = TimeEvents[i]; 
+    var timeSaver = JSON.parse(localStorage.getItem(TextId));
+    document.getElementById(TextId).innerHTML = timeSaver;
+    }
+}
+
+GettingStorage();
 // var boxId
-var boxes = getElementById.boxIds
+// var boxes = getElementById.boxIds
 
 
-var currentTime = moment().hour()
-var boxTime
+// var currentTime = moment().hour()
+// var boxTime
 
 // if (boxTime === moment().hour()) {
 // document.getElementById(boxId).className = "past"
