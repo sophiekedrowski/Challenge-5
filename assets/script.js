@@ -1,8 +1,6 @@
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
-
-
 // WHEN I scroll down
 // THEN I am presented with time blocks for standard business hours
 // WHEN I view the time blocks for that day
@@ -13,9 +11,6 @@
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
 // THEN the saved events persist
-
-
-
 
 
 
@@ -154,30 +149,3 @@ function GettingStorage() {
 }
 
 GettingStorage();
-// var boxId
-// var boxes = getElementById.boxIds
-
-
-// var currentTime = moment().hour()
-// var boxTime
-
-// if (boxTime === moment().hour()) {
-// document.getElementById(boxId).className = "past"
-// }
-// else if (boxTime > moment().hour()) {
-
-// }
-// else {
-
-// }
-
-
-
-
-//use moment.hours
-//Make sure to remove other color in conditional statement so it doesn't write over it
-
-//Making blocks using bootstrap, each row needs 3 components and then change column size
-
-
-//USE local storage for whatever the user inputs into the boxes
